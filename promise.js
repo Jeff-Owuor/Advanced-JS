@@ -23,3 +23,18 @@ let anotherPromise = new Promise((resolve,reject)=>{
 anotherPromise.catch(err=>{
     console.log(`${err}`)
 })
+
+//using both catch and then methods
+
+let promiseObj2 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        // resolve("Asynchronous programming is actually not as hard as it seemed in the beginning")
+        reject(new Error("404 - Page not found!!"))
+    },4000)
+})
+promiseObj2.then((val)=>{
+    console.log(`${val}`)
+})
+promiseObj2.catch((err)=>{
+    console.log(`Error occurred = ${err}`)
+})
